@@ -87,3 +87,37 @@ print ("dy", d2)
 # Calculate the square root
 d=(d1+d2)**0.5
 print (d)
+
+#AMB2
+import random
+import matplotlib.pyplot as plt
+import operator
+
+# Set the pseudo-random seed for reproducibility
+random.seed(0)
+
+# Create a list to store agents
+agents = []
+
+# Initialise variable x0
+x0 = random.randint(0, 99)
+print("x0", x0)
+# Initialise variable y0
+y0 = random.randint(0, 99)
+print("y0", y0)
+agents.append([x0,y0]) # Append to the list agents
+print(agents)
+
+
+# Plot the agents in black
+plt.scatter(agents[0][0], agents[0][1], color='black')
+plt.scatter(agents[1][0], agents[1][1], color='black')
+plt.show()
+# Get the coordinates with the largest x-coordinate
+print(max(agents, key=operator.itemgetter(0)))
+
+#Plot the point with the largest x coordinate red
+maxpoint= []
+maxpoint.append(max(agents, key=operator.itemgetter(0)))
+print(maxpoint)
+plt.scatter(maxpoint[0][0], maxpoint[0][1], color='red')
