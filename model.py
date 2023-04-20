@@ -121,3 +121,26 @@ maxpoint= []
 maxpoint.append(max(agents, key=operator.itemgetter(0)))
 print(maxpoint)
 plt.scatter(maxpoint[0][0], maxpoint[0][1], color='red')
+
+
+agents.clear()
+print(agents)
+
+n_agents = 10
+for i in range(n_agents):
+    agents.append([random.randint(0, 99), random.randint(0, 99)])
+
+print(agents)
+max_value= max(agents)
+print(max_value)
+
+
+# Plot the agents in black in loop with the largest x coordinate red
+
+for i in range(n_agents):
+    if agents[i]==max_value:
+        plt.scatter(agents[i][0], agents[i][1], color='red')
+    else:
+        plt.scatter(agents[i][0], agents[i][1], color='black')
+    
+plt.show()
